@@ -703,7 +703,6 @@ nav label, nav input {
 
 
 nav ul {
-    position: absolute;
     display: flex;
     flex-direction: row;
     max-height: none;
