@@ -80,7 +80,7 @@ body {
 
 header {
     background: var(--black);
-    color: var(--white);
+    color: var(--blue);
     padding: 1.25rem 1.75rem;
     display: flex;
     align-items: center;
@@ -124,6 +124,7 @@ nav {
 
 nav ul {
     width: 100%;
+    top: 100%;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -143,26 +144,26 @@ nav li a {
     display: block;
     font-family: var(--font);
     font-size: 1.25rem;
-    padding: 1rem;
+    padding: 1rem 1.5rem;
     text-transform: uppercase;
     font-weight: 600;
     text-decoration: none;
-    color: var(--white);
+    color: var(--blue);
     transition: background-color .3s ease-in;
 }
 
 nav li a:hover {
     background-color: var(--blue);
+    color: var(--black);
 }
 
 nav label {
     cursor: pointer;
     display: inline-block;
-    padding: 1rem;
     user-select: none;
     position: absolute;
-    right: 1rem;
-    top: 1rem;
+    right: 1.5rem;
+    transform: translateY(-50%);
 }
 
 nav label span {
@@ -185,15 +186,15 @@ nav label span:before, nav label span:after {
 }
 
 nav label span:before {
-  top: .6rem;
+    top: .6rem;
 }
 
 nav label span:after {
-  top: -.6rem;
+    top: -.6rem;
 }
 
 nav input {
-  display: none;
+    display: none;
 }
 
 nav input:checked ~ ul {
@@ -453,6 +454,7 @@ button[type="submit"]:hover {
     border: 2px solid var(--blue);
     border-radius: 6px;
     font-size: 1rem;
+    box-sizing: border-box
 }
 
 #contact textarea {
@@ -532,27 +534,27 @@ footer a {
 
 #results {
     padding: 4rem 0;
-  }
+}
 
-  #results table {
+#results table {
     width: 100%;
     border-radius: 10px;
     overflow: hidden;
     font-size: 1.05rem;
     margin-top: 1rem;
-  }
+}
 
-  #results th {
+#results th {
     font-size: 1.1rem;
     padding: 1.1rem;
     font-weight: 700;
-  }
+}
 
-  #results td {
+#results td {
     padding: 1rem 1.25rem;
-  }
+}
 
-  #results h2 {
+#results h2 {
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
@@ -590,7 +592,7 @@ footer a {
     text-decoration: underline;
 }
 
- header h1::before {
+header h1::before {
     content: "";
     left:-.5rem;
     width: 3.75rem;
@@ -701,35 +703,24 @@ nav label, nav input {
 
 
 nav ul {
+    position: absolute;
     display: flex;
     flex-direction: row;
-    gap: 2rem;
     max-height: none;
     height: auto;
     overflow: visible;
-    position: static;
     background: none;
+    top: 100%;                 
 }
 
 nav li a {
-    padding: 0;
-    font-size: 1rem;
+    padding: 1rem 1.5rem;
+    font-size: 1.2rem;
 }
 }
 
 #offer {
     grid-template-columns: repeat(2, 1fr);
-}
-
-.results-content {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 3rem;
-}
-
-.results-left, .results-right {
-    width: 50%;
 }
 
 /* MEDIA QUERIES (LARGE) */
@@ -744,6 +735,18 @@ nav li a {
 #offer {
     grid-template-columns: repeat(3, 1fr);
 }
+
+.results-content {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 3rem;
+    }
+
+    .results-left, .results-right {
+        width: 50%;
+    }
+
 
 }
 
